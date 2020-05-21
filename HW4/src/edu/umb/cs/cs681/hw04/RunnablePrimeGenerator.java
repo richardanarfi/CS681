@@ -26,7 +26,7 @@ public class RunnablePrimeGenerator extends PrimeGenerator implements Runnable {
 		
 	    long overheadThread1 = System.currentTimeMillis() - startTime1Thread;
 
-	    g.getPrimes().forEach( (Long prime)->System.out.print(prime + ", ") );
+//	    g.getPrimes().forEach( (Long prime)->System.out.print(prime + ", ") );
 		
 		long primeNum = g.getPrimes().size();
 		System.out.println("\n" + primeNum + " prime numbers are found in total.");
