@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="hw20" basedir="." default="Run">
+
+	<property environment = "env"/>
+
+	<path id = "CLASSPATH">
+		<pathelement path="bin"/>
+	</path>
+
+	<target name="Run" depends="Compilation">
+		<java classname="edu.umb.cs.cs681.hw20.TextAnalysis" fork="true">
+			<classpath path="bin" />
+		</java>
+	</target>
+	
+	<target name="Compilation">
+		<delete dir="bin"/>
+		<mkdir dir ="bin"/>
+		<javac includeantruntime="false" srcdir="src" destdir="bin" >
+			<classpath refid="CLASSPATH"/>		
+		</javac>
+	</target>
+
+</project>

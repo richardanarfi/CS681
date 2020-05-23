@@ -12,9 +12,10 @@ public class RunnablePrimeGenerator extends PrimeGenerator implements Runnable {
 
 	public static void main(String[] args) {
 
-		System.out.println("Generating Primes...");
+		System.out.println("Generating Primes...\n");
 		
         // With 1 thread
+		System.out.println("With 1 thread");
 		RunnablePrimeGenerator g = new RunnablePrimeGenerator(1, 2000000);
 		Thread t = new Thread(g);
 		
@@ -29,14 +30,10 @@ public class RunnablePrimeGenerator extends PrimeGenerator implements Runnable {
 //	    g.getPrimes().forEach( (Long prime)->System.out.print(prime + ", ") );
 		
 		long primeNum = g.getPrimes().size();
-		System.out.println("\n" + primeNum + " prime numbers are found in total.");
-		
-		System.out.println("=============================");
-		System.out.println("| # of threads | Time (sec) |");
-		System.out.println("=============================");
-	    System.out.println("|       1      |   " + ((double)(overheadThread1)/1000) + "   |" );
+		System.out.println(primeNum + " prime numbers are found in total.\n");		
 
-        // With 2 threads	
+        // With 2 threads
+		System.out.println("With 2 threads");		
 		RunnablePrimeGenerator g2_1 = new RunnablePrimeGenerator(1, 1000000);
 		RunnablePrimeGenerator g2_2 = new RunnablePrimeGenerator(1000001, 2000000);
 		Thread t1 = new Thread(g2_1);
@@ -51,10 +48,12 @@ public class RunnablePrimeGenerator extends PrimeGenerator implements Runnable {
 		} catch (InterruptedException e) {}
 		
 	    long overheadThread2 = System.currentTimeMillis() - startTime2Threads;
-		System.out.println("-----------------------------");
-	    System.out.println("|       2      |    " + ((double)(overheadThread2)/1000) + "   |" );    
+		
+		long primeNum2 = g2_1.getPrimes().size() + g2_2.getPrimes().size();
+		System.out.println(primeNum2 + " prime numbers are found in total.\n");   
 	    
-        // With 4 threads	
+        // With 4 threads
+		System.out.println("With 4 threads");		
 		RunnablePrimeGenerator g4_1 = new RunnablePrimeGenerator(1, 500000);
 		RunnablePrimeGenerator g4_2 = new RunnablePrimeGenerator(500001, 1000000);
 		RunnablePrimeGenerator g4_3 = new RunnablePrimeGenerator(1000001, 1500000);
@@ -77,11 +76,12 @@ public class RunnablePrimeGenerator extends PrimeGenerator implements Runnable {
 		} catch (InterruptedException e) {}
 
 	    long overheadThread4 = System.currentTimeMillis() - startTime4Threads;
-		System.out.println("-----------------------------");
-	    System.out.println("|       4      |    " + ((double)(overheadThread4)/1000) + "   |" );
+		
+		long primeNum4 = g4_1.getPrimes().size() + g4_2.getPrimes().size() + g4_3.getPrimes().size() + g4_4.getPrimes().size();
+		System.out.println(primeNum4 + " prime numbers are found in total.\n");		
 	    
         // With 8 threads
-		
+		System.out.println("With 8 threads");		
 		RunnablePrimeGenerator g8_1 = new RunnablePrimeGenerator(1, 250000);
 		RunnablePrimeGenerator g8_2 = new RunnablePrimeGenerator(250001, 500000);
 		RunnablePrimeGenerator g8_3 = new RunnablePrimeGenerator(500001, 750000);
@@ -120,11 +120,12 @@ public class RunnablePrimeGenerator extends PrimeGenerator implements Runnable {
 		} catch (InterruptedException e) {}
 
 	    long overheadThread8 = System.currentTimeMillis() - startTime8Threads;
-		System.out.println("-----------------------------");
-	    System.out.println("|       8      |    " + ((double)(overheadThread8)/1000) + "   |" );
+		
+		long primeNum8 = g8_1.getPrimes().size() + g8_2.getPrimes().size() + g8_3.getPrimes().size() + g8_4.getPrimes().size() + g8_5.getPrimes().size() + g8_6.getPrimes().size() + g8_7.getPrimes().size() + g8_8.getPrimes().size();
+		System.out.println(primeNum8 + " prime numbers are found in total.\n");		
 	    
         // With 16 threads
-		
+		System.out.println("With 16 threads");
 		RunnablePrimeGenerator g16_1 = new RunnablePrimeGenerator(1,      125000);
 		RunnablePrimeGenerator g16_2 = new RunnablePrimeGenerator(125001, 250000);
 		RunnablePrimeGenerator g16_3 = new RunnablePrimeGenerator(250001, 375000);
@@ -158,7 +159,9 @@ public class RunnablePrimeGenerator extends PrimeGenerator implements Runnable {
 		Thread t16_14 = new Thread(g16_14);
 		Thread t16_15 = new Thread(g16_15);
 		Thread t16_16 = new Thread(g16_16);
+		
 		long startTime16Threads = System.currentTimeMillis();
+		
 		t16_1.start();
 		t16_2.start();
 		t16_3.start();
@@ -195,10 +198,24 @@ public class RunnablePrimeGenerator extends PrimeGenerator implements Runnable {
 		} catch (InterruptedException e) {}
 
 	    long overheadThread16 = System.currentTimeMillis() - startTime16Threads;
+		
+		long primeNum16 = g16_1.getPrimes().size() + g16_2.getPrimes().size() + g16_3.getPrimes().size() + g16_4.getPrimes().size() + g16_5.getPrimes().size() + g16_6.getPrimes().size() + g16_7.getPrimes().size() + g16_8.getPrimes().size() + g16_9.getPrimes().size() + g16_10.getPrimes().size() + g16_11.getPrimes().size() + g16_12.getPrimes().size() + g16_13.getPrimes().size() + g16_14.getPrimes().size() + g16_15.getPrimes().size() + g16_16.getPrimes().size();
+		System.out.println(primeNum16 + " prime numbers are found in total.\n");
+
+		System.out.println("\nSUMMARY OF RESULTS\n");
+		System.out.println("=============================");
+		System.out.println("| # of threads | Time (sec) |");
+		System.out.println("=============================");
+	    System.out.println("|       1      |    " + ((double)(overheadThread1)/1000) + "   |" );		
+		System.out.println("-----------------------------");
+	    System.out.println("|       2      |    " + ((double)(overheadThread2)/1000) + "   |" ); 
+		System.out.println("-----------------------------");
+	    System.out.println("|       4      |    " + ((double)(overheadThread4)/1000) + "   |" );
+		System.out.println("-----------------------------");
+	    System.out.println("|       8      |    " + ((double)(overheadThread8)/1000) + "   |" );
 		System.out.println("-----------------------------");
 	    System.out.println("|      16      |    " + ((double)(overheadThread16)/1000) + "   |" );
 		System.out.println("=============================");
 
 	}
-
 }
