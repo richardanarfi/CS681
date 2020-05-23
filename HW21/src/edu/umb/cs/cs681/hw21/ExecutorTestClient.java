@@ -10,7 +10,7 @@ public class ExecutorTestClient {
 
 		System.out.println("Generating Primes...\n");
 		
-        // With single thread executor
+		// With single thread executor
 		System.out.println("With single thread executor");
 		RunnablePrimeGenerator g = new RunnablePrimeGenerator(1, 2000000);
 		
@@ -30,7 +30,7 @@ public class ExecutorTestClient {
 		long primeNum = g.getPrimes().size();
 		System.out.println(primeNum + " prime numbers are found in total.\n");
 
-        // With pool size 2	
+		// With pool size 2	
 		System.out.println("With pool size 2");
 		RunnablePrimeGenerator g2_1 = new RunnablePrimeGenerator(1, 1000000);
 		RunnablePrimeGenerator g2_2 = new RunnablePrimeGenerator(1000001, 2000000);
@@ -52,7 +52,7 @@ public class ExecutorTestClient {
 		long primeNum2 = g2_1.getPrimes().size() + g2_2.getPrimes().size();
 		System.out.println(primeNum2 + " prime numbers are found in total.\n");    
 	    
-        // With pool size 4	
+		// With pool size 4	
 		System.out.println("With pool size 4");
 		RunnablePrimeGenerator g4_1 = new RunnablePrimeGenerator(1, 500000);
 		RunnablePrimeGenerator g4_2 = new RunnablePrimeGenerator(500001, 1000000);
@@ -78,7 +78,7 @@ public class ExecutorTestClient {
 		long primeNum4 = g4_1.getPrimes().size() + g4_2.getPrimes().size() + g4_3.getPrimes().size() + g4_4.getPrimes().size();
 		System.out.println(primeNum4 + " prime numbers are found in total.\n");		
 	    
-        // With pool size 8
+		// With pool size 8
 		System.out.println("With pool size 8");
 		RunnablePrimeGenerator g8_1 = new RunnablePrimeGenerator(1, 250000);
 		RunnablePrimeGenerator g8_2 = new RunnablePrimeGenerator(250001, 500000);
@@ -112,7 +112,7 @@ public class ExecutorTestClient {
 		long primeNum8 = g8_1.getPrimes().size() + g8_2.getPrimes().size() + g8_3.getPrimes().size() + g8_4.getPrimes().size() + g8_5.getPrimes().size() + g8_6.getPrimes().size() + g8_7.getPrimes().size() + g8_8.getPrimes().size();
 		System.out.println(primeNum8 + " prime numbers are found in total.\n");		
 	    
-        // With pool size 16
+		// With pool size 16
 		System.out.println("With pool size 16");
 		RunnablePrimeGenerator g16_1 = new RunnablePrimeGenerator(1,      125000);
 		RunnablePrimeGenerator g16_2 = new RunnablePrimeGenerator(125001, 250000);
