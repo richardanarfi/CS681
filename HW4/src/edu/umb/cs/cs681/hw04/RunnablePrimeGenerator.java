@@ -25,7 +25,7 @@ public class RunnablePrimeGenerator extends PrimeGenerator implements Runnable {
 			t.join();
 		} catch (InterruptedException e) {}
 		
-	    long overheadThread1 = System.currentTimeMillis() - startTime1Thread;
+		long overheadThread1 = System.currentTimeMillis() - startTime1Thread;
 
 //	    g.getPrimes().forEach( (Long prime)->System.out.print(prime + ", ") );
 		
@@ -47,7 +47,7 @@ public class RunnablePrimeGenerator extends PrimeGenerator implements Runnable {
 			t2.join();
 		} catch (InterruptedException e) {}
 		
-	    long overheadThread2 = System.currentTimeMillis() - startTime2Threads;
+		long overheadThread2 = System.currentTimeMillis() - startTime2Threads;
 		
 		long primeNum2 = g2_1.getPrimes().size() + g2_2.getPrimes().size();
 		System.out.println(primeNum2 + " prime numbers are found in total.\n");   
@@ -75,7 +75,7 @@ public class RunnablePrimeGenerator extends PrimeGenerator implements Runnable {
 			t4_4.join();
 		} catch (InterruptedException e) {}
 
-	    long overheadThread4 = System.currentTimeMillis() - startTime4Threads;
+		long overheadThread4 = System.currentTimeMillis() - startTime4Threads;
 		
 		long primeNum4 = g4_1.getPrimes().size() + g4_2.getPrimes().size() + g4_3.getPrimes().size() + g4_4.getPrimes().size();
 		System.out.println(primeNum4 + " prime numbers are found in total.\n");		
@@ -119,7 +119,7 @@ public class RunnablePrimeGenerator extends PrimeGenerator implements Runnable {
 			t8_8.join();
 		} catch (InterruptedException e) {}
 
-	    long overheadThread8 = System.currentTimeMillis() - startTime8Threads;
+		long overheadThread8 = System.currentTimeMillis() - startTime8Threads;
 		
 		long primeNum8 = g8_1.getPrimes().size() + g8_2.getPrimes().size() + g8_3.getPrimes().size() + g8_4.getPrimes().size() + g8_5.getPrimes().size() + g8_6.getPrimes().size() + g8_7.getPrimes().size() + g8_8.getPrimes().size();
 		System.out.println(primeNum8 + " prime numbers are found in total.\n");		
@@ -197,7 +197,7 @@ public class RunnablePrimeGenerator extends PrimeGenerator implements Runnable {
 			t16_16.join();
 		} catch (InterruptedException e) {}
 
-	    long overheadThread16 = System.currentTimeMillis() - startTime16Threads;
+		long overheadThread16 = System.currentTimeMillis() - startTime16Threads;
 		
 		long primeNum16 = g16_1.getPrimes().size() + g16_2.getPrimes().size() + g16_3.getPrimes().size() + g16_4.getPrimes().size() + g16_5.getPrimes().size() + g16_6.getPrimes().size() + g16_7.getPrimes().size() + g16_8.getPrimes().size() + g16_9.getPrimes().size() + g16_10.getPrimes().size() + g16_11.getPrimes().size() + g16_12.getPrimes().size() + g16_13.getPrimes().size() + g16_14.getPrimes().size() + g16_15.getPrimes().size() + g16_16.getPrimes().size();
 		System.out.println(primeNum16 + " prime numbers are found in total.\n");
@@ -206,15 +206,15 @@ public class RunnablePrimeGenerator extends PrimeGenerator implements Runnable {
 		System.out.println("=============================");
 		System.out.println("| # of threads | Time (sec) |");
 		System.out.println("=============================");
-	    System.out.println("|       1      |    " + ((double)(overheadThread1)/1000) + "   |" );		
+		System.out.println("|       1      |    " + ((double)(overheadThread1)/1000) + "   |" );		
 		System.out.println("-----------------------------");
-	    System.out.println("|       2      |    " + ((double)(overheadThread2)/1000) + "   |" ); 
+		System.out.println("|       2      |    " + ((double)(overheadThread2)/1000) + "   |" ); 
 		System.out.println("-----------------------------");
-	    System.out.println("|       4      |    " + ((double)(overheadThread4)/1000) + "   |" );
+		System.out.println("|       4      |    " + ((double)(overheadThread4)/1000) + "   |" );
 		System.out.println("-----------------------------");
-	    System.out.println("|       8      |    " + ((double)(overheadThread8)/1000) + "   |" );
+		System.out.println("|       8      |    " + ((double)(overheadThread8)/1000) + "   |" );
 		System.out.println("-----------------------------");
-	    System.out.println("|      16      |    " + ((double)(overheadThread16)/1000) + "   |" );
+		System.out.println("|      16      |    " + ((double)(overheadThread16)/1000) + "   |" );
 		System.out.println("=============================");
 
 	}
