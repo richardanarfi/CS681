@@ -14,7 +14,7 @@ public class RunnablePrimeGenerator extends PrimeGenerator implements Runnable {
 
 		System.out.println("Generating Primes...\n");
 		
-        // With 1 thread
+		// With 1 thread
 		System.out.println("With 1 thread");
 		RunnablePrimeGenerator g = new RunnablePrimeGenerator(1, 2000000);
 		Thread t = new Thread(g);
@@ -27,12 +27,12 @@ public class RunnablePrimeGenerator extends PrimeGenerator implements Runnable {
 		
 		long overheadThread1 = System.currentTimeMillis() - startTime1Thread;
 
-//	    g.getPrimes().forEach( (Long prime)->System.out.print(prime + ", ") );
+		//g.getPrimes().forEach( (Long prime)->System.out.print(prime + ", ") );
 		
 		long primeNum = g.getPrimes().size();
 		System.out.println(primeNum + " prime numbers are found in total.\n");		
 
-        // With 2 threads
+		// With 2 threads
 		System.out.println("With 2 threads");		
 		RunnablePrimeGenerator g2_1 = new RunnablePrimeGenerator(1, 1000000);
 		RunnablePrimeGenerator g2_2 = new RunnablePrimeGenerator(1000001, 2000000);
@@ -52,7 +52,7 @@ public class RunnablePrimeGenerator extends PrimeGenerator implements Runnable {
 		long primeNum2 = g2_1.getPrimes().size() + g2_2.getPrimes().size();
 		System.out.println(primeNum2 + " prime numbers are found in total.\n");   
 	    
-        // With 4 threads
+		// With 4 threads
 		System.out.println("With 4 threads");		
 		RunnablePrimeGenerator g4_1 = new RunnablePrimeGenerator(1, 500000);
 		RunnablePrimeGenerator g4_2 = new RunnablePrimeGenerator(500001, 1000000);
@@ -80,7 +80,7 @@ public class RunnablePrimeGenerator extends PrimeGenerator implements Runnable {
 		long primeNum4 = g4_1.getPrimes().size() + g4_2.getPrimes().size() + g4_3.getPrimes().size() + g4_4.getPrimes().size();
 		System.out.println(primeNum4 + " prime numbers are found in total.\n");		
 	    
-        // With 8 threads
+		// With 8 threads
 		System.out.println("With 8 threads");		
 		RunnablePrimeGenerator g8_1 = new RunnablePrimeGenerator(1, 250000);
 		RunnablePrimeGenerator g8_2 = new RunnablePrimeGenerator(250001, 500000);
@@ -124,7 +124,7 @@ public class RunnablePrimeGenerator extends PrimeGenerator implements Runnable {
 		long primeNum8 = g8_1.getPrimes().size() + g8_2.getPrimes().size() + g8_3.getPrimes().size() + g8_4.getPrimes().size() + g8_5.getPrimes().size() + g8_6.getPrimes().size() + g8_7.getPrimes().size() + g8_8.getPrimes().size();
 		System.out.println(primeNum8 + " prime numbers are found in total.\n");		
 	    
-        // With 16 threads
+		// With 16 threads
 		System.out.println("With 16 threads");
 		RunnablePrimeGenerator g16_1 = new RunnablePrimeGenerator(1,      125000);
 		RunnablePrimeGenerator g16_2 = new RunnablePrimeGenerator(125001, 250000);
